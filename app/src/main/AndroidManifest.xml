@@ -7,9 +7,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Timer"
         tools:targetApi="31">
@@ -17,14 +17,16 @@
         <activity-alias
             android:name="Launcher"
             android:exported="true"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".page.Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".page.Main" />
+
+        <activity android:name=".page.Config" />
 
     </application>
 
