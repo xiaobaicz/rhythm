@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">节奏</string>
+    <string name="config">配置</string>
+    <string name="start">开始</string>
+    <string name="relax">放松(s)</string>
+    <string name="last">持续(s)</string>
+    <string name="click_to_enter">点击输入</string>
+    <string name="loop">循环</string>
+    <string name="action">行动</string>
+</resources>

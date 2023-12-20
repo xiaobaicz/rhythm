@@ -6,4 +6,5 @@
     <string name="last">Last(s)</string>
     <string name="click_to_enter">Click to enter</string>
     <string name="loop">Loop</string>
+    <string name="action">Action</string>
 </resources>

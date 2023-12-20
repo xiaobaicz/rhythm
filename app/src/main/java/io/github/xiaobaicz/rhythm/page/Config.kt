@@ -1,6 +1,7 @@
 package io.github.xiaobaicz.rhythm.page
 
 import android.os.Bundle
+import io.github.xiaobaicz.rhythm.content.toPage
 import io.github.xiaobaicz.rhythm.databinding.PageConfigBinding
 import io.github.xiaobaicz.rhythm.entity.Beat
 import io.github.xiaobaicz.rhythm.store.Local
@@ -21,9 +22,11 @@ class Config : AppCompatActivity() {
             try {
                 val relax = bind.relax.text?.toString()?.toInt() ?: 0
                 val last = bind.last.text?.toString()?.toInt() ?: 0
-                val loop = bind.loop.text?.toString()?.toInt() ?: 0
+                val loop = bind.loop.text?.toString()?.toInt() ?: 1
+                if (last == 0) return@setOnClickListener
                 local.beat = Beat(relax, last)
-                local.loop = loop
+                local.loop = if (loop == 0) 1 else loop
+                toPage<Action>()
             } catch (t: Throwable) {
                 t.printStackTrace()
             }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
@@ -17,8 +18,9 @@
             android:layout_gravity="center"
             android:text="@string/config"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:lineHeightX="36sp" />
 
     </FrameLayout>
 
@@ -41,19 +43,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/relax"
                     android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:lineHeightX="30sp" />
 
                 <cc.xiaobaicz.widgets.text.AppCompatEdit
                     android:id="@+id/relax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:inputType="number"
-                    android:textSize="16sp"
-                    android:textColor="@color/text"
                     android:hint="@string/click_to_enter"
-                    android:textColorHint="@color/text_hint"/>
+                    android:inputType="number"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -64,19 +67,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/last"
                     android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:lineHeightX="30sp" />
 
                 <cc.xiaobaicz.widgets.text.AppCompatEdit
                     android:id="@+id/last"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:inputType="number"
-                    android:textSize="16sp"
-                    android:textColor="@color/text"
                     android:hint="@string/click_to_enter"
-                    android:textColorHint="@color/text_hint"/>
+                    android:inputType="number"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -87,19 +91,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/loop"
                     android:textColor="@color/text"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:lineHeightX="30sp" />
 
                 <cc.xiaobaicz.widgets.text.AppCompatEdit
                     android:id="@+id/loop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:inputType="number"
-                    android:textSize="16sp"
-                    android:textColor="@color/text"
                     android:hint="@string/click_to_enter"
-                    android:textColorHint="@color/text_hint"/>
+                    android:inputType="number"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -116,6 +121,7 @@
         android:text="@string/start"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:lineHeightX="30sp" />
 
 </LinearLayout>
