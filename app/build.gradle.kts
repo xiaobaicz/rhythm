@@ -40,8 +40,11 @@ dependencies {
     testImplementation(libs.bundles.test)
     androidTestImplementation(libs.bundles.test.android)
 
+    implementation(libs.mmkv)
+
     implementation(libs.common)
     implementation(libs.store)
     implementation(libs.store.mmkv)
     implementation(libs.store.serialize.gson)
+    implementation(libs.text)
 }
