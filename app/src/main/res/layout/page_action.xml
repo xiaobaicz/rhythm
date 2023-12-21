@@ -13,13 +13,8 @@
         android:translationZ="8dp">
 
         <cc.xiaobaicz.widgets.text.AppCompatText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            style="@style/bar_title"
             android:text="@string/action"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
             app:lineHeightX="36sp" />
 
     </FrameLayout>

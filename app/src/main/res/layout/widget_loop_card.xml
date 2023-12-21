@@ -5,26 +5,16 @@
 
         <cc.xiaobaicz.widgets.text.AppCompatText
             android:id="@+id/tag_loop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/loop"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            style="@style/tag_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lineHeightX="30sp" />
 
         <cc.xiaobaicz.widgets.text.AppCompatEdit
             android:id="@+id/loop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            style="@style/input_card"
             android:hint="@string/click_to_enter"
-            android:inputType="number"
-            android:textColor="@color/text"
-            android:textColorHint="@color/text_hint"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tag_loop"
             app:layout_constraintTop_toBottomOf="@id/tag_loop" />
 

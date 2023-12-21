@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/item_config"
         android:layout_marginTop="16dp">
 
         <cc.xiaobaicz.widgets.text.AppCompatText
             android:id="@+id/tag_relax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/tag_card"
             android:text="@string/relax"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lineHeightX="30sp" />
 
         <cc.xiaobaicz.widgets.text.AppCompatEdit
             android:id="@+id/relax"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            style="@style/input_card"
             android:hint="@string/click_to_enter"
-            android:inputType="number"
-            android:textColor="@color/text"
-            android:textColorHint="@color/text_hint"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tag_relax"
             app:layout_constraintTop_toBottomOf="@id/tag_relax" />
 
@@ -39,26 +30,17 @@
 
         <cc.xiaobaicz.widgets.text.AppCompatText
             android:id="@+id/tag_last"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/tag_card"
+            android:layout_marginTop="16dp"
             android:text="@string/last"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/tag_relax"
             app:layout_constraintTop_toBottomOf="@id/relax"
             app:lineHeightX="30sp" />
 
         <cc.xiaobaicz.widgets.text.AppCompatEdit
             android:id="@+id/last"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            style="@style/input_card"
             android:hint="@string/click_to_enter"
-            android:inputType="number"
-            android:textColor="@color/text"
-            android:textColorHint="@color/text_hint"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tag_last"
             app:layout_constraintTop_toBottomOf="@id/tag_last" />
 
