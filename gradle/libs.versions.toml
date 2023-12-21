@@ -1,8 +1,11 @@
 [versions]
 agp = "8.2.0"
 common = "1.0.0"
+firebase-bom = "32.7.0"
 mmkv = "1.3.1"
 org-jetbrains-kotlin-android = "1.9.20"
+com-google-gms-google-services = "4.4.0"
+com-google-firebase-crashlytics = "2.9.9"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -16,6 +19,9 @@ text = "1.0.9"
 [libraries]
 common = { module = "vip.oicp.xiaobaicz:common", version.ref = "common" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
@@ -38,3 +44,5 @@ test-android = ["androidx-test-ext-junit", "espresso-core"]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+com-google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "com-google-gms-google-services"}
+com-google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "com-google-firebase-crashlytics"}

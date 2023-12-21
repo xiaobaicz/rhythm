@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050122721279",
+    "project_id": "rhythm-502b1",
+    "storage_bucket": "rhythm-502b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050122721279:android:67a4221fb33432981c39ca",
+        "android_client_info": {
+          "package_name": "io.github.xiaobaicz.rhythm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMnl9aSb-jBsWbWqnY1sP_ePfF4eQi3fc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
