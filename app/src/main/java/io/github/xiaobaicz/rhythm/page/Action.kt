@@ -21,7 +21,7 @@ class Action : AppCompatActivity() {
 
     private val local = store<Local>()
 
-    private val player by lazy { MediaPlayer.create(this, R.raw.last) }
+    private val player by lazy { MediaPlayer.create(this, R.raw.kn_part) }
 
     private var isLast = false
 
@@ -66,7 +66,7 @@ class Action : AppCompatActivity() {
 
     private suspend fun relax(time: Long) {
         if (player.isPlaying)
-            player.stop()
+            player.pause()
         isLast = false
         delay(time)
     }

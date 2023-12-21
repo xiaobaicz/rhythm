@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class io.github.xiaobaicz.rhythm.entity.** { *; }
+-keep class io.github.xiaobaicz.rhythm.store.** { *; }
