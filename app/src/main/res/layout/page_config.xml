@@ -34,79 +34,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                style="@style/item_config"
-                android:layout_marginTop="16dp">
+            <io.github.xiaobaicz.rhythm.widget.BeatCard
+                android:id="@+id/beat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                <cc.xiaobaicz.widgets.text.AppCompatText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/relax"
-                    android:textColor="@color/text"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:lineHeightX="30sp" />
-
-                <cc.xiaobaicz.widgets.text.AppCompatEdit
-                    android:id="@+id/relax"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/click_to_enter"
-                    android:inputType="number"
-                    android:textColor="@color/text"
-                    android:textColorHint="@color/text_hint"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout style="@style/item_config">
-
-                <cc.xiaobaicz.widgets.text.AppCompatText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/last"
-                    android:textColor="@color/text"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:lineHeightX="30sp" />
-
-                <cc.xiaobaicz.widgets.text.AppCompatEdit
-                    android:id="@+id/last"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/click_to_enter"
-                    android:inputType="number"
-                    android:textColor="@color/text"
-                    android:textColorHint="@color/text_hint"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout style="@style/item_config">
-
-                <cc.xiaobaicz.widgets.text.AppCompatText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/loop"
-                    android:textColor="@color/text"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:lineHeightX="30sp" />
-
-                <cc.xiaobaicz.widgets.text.AppCompatEdit
-                    android:id="@+id/loop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/click_to_enter"
-                    android:inputType="number"
-                    android:textColor="@color/text"
-                    android:textColorHint="@color/text_hint"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
+            <io.github.xiaobaicz.rhythm.widget.LoopCard
+                android:id="@+id/loop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

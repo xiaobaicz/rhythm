@@ -3,10 +3,10 @@ package io.github.xiaobaicz.rhythm.page
 import android.os.Bundle
 import io.github.xiaobaicz.rhythm.content.toPage
 import io.github.xiaobaicz.rhythm.databinding.PageConfigBinding
-import io.github.xiaobaicz.rhythm.entity.Beat
 import io.github.xiaobaicz.rhythm.store.Local
 import vip.oicp.xiaobaicz.lib.common.app.AppCompatActivity
 import vip.oicp.xiaobaicz.lib.store.store
+import kotlin.math.max
 
 class Config : AppCompatActivity() {
 
@@ -17,29 +17,16 @@ class Config : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bind.root)
+        bind.beat.setBeat(local.beat)
+        bind.loop.setLoop(local.loop)
 
-        bind.start.setOnClickListener {
-            try {
-                val relax = bind.relax.text?.toString()?.toInt() ?: 0
-                val last = bind.last.text?.toString()?.toInt() ?: 0
-                val loop = bind.loop.text?.toString()?.toInt() ?: 1
-                if (last == 0) return@setOnClickListener
-                local.beat = Beat(relax, last)
-                local.loop = if (loop == 0) 1 else loop
-                toPage<Action>()
-            } catch (t: Throwable) {
-                t.printStackTrace()
-            }
-        }
+        bind.start.setOnClickListener { start() }
+    }
 
-        local.beat?.also {
-            bind.relax.setText("${it.relax}")
-            bind.last.setText("${it.last}")
-        }
-
-        local.loop?.also {
-            bind.loop.setText("$it")
-        }
+    private fun start() {
+        local.beat = bind.beat.getBeat()
+        local.loop = max(bind.loop.getLoop(), 1)
+        toPage<Action>()
     }
 
 }

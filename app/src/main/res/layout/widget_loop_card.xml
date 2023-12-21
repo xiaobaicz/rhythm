@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/item_config">
+
+        <cc.xiaobaicz.widgets.text.AppCompatText
+            android:id="@+id/tag_loop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loop"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeightX="30sp" />
+
+        <cc.xiaobaicz.widgets.text.AppCompatEdit
+            android:id="@+id/loop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/click_to_enter"
+            android:inputType="number"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text_hint"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tag_loop"
+            app:layout_constraintTop_toBottomOf="@id/tag_loop" />
+
+        <ImageView
+            android:id="@+id/clear_loop"
+            style="@style/btn_clear"
+            app:layout_constraintBottom_toBottomOf="@id/loop"
+            app:layout_constraintEnd_toEndOf="@id/loop"
+            app:layout_constraintTop_toTopOf="@id/loop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>
