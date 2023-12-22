@@ -32,10 +32,6 @@ android {
         versionCode = 1000
         versionName = "1.0.0"
 
-        ndk {
-            abiFilters += setOf("arm64-v8a", "armeabi-v7a")
-        }
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
