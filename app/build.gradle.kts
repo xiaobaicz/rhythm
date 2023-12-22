@@ -6,6 +6,19 @@ plugins {
 }
 
 android {
+    namespace = "io.github.xiaobaicz.rhythm"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "io.github.xiaobaicz.rhythm"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1000
+        versionName = "1.0.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
     signingConfigs {
         val jksFile = System.getenv("XB_JKS_FILE")
         val jksPassword = System.getenv("XB_JKS_PASSWORD")
@@ -22,18 +35,6 @@ android {
             keyAlias = "rhythm"
         }
     }
-    namespace = "io.github.xiaobaicz.rhythm"
-    compileSdk = 34
-
-    defaultConfig {
-        applicationId = "io.github.xiaobaicz.rhythm"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1000
-        versionName = "1.0.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
 
     buildTypes {
         debug {
@@ -42,6 +43,7 @@ android {
         release {
             signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
