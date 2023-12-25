@@ -55,8 +55,8 @@
         android:textStyle="bold"
         android:shadowColor="#3000"
         android:shadowRadius="8"
-        android:shadowDy="8"
-        android:shadowDx="8"
+        android:shadowDy="4"
+        android:shadowDx="4"
         app:lineHeightX="30sp" />
 
 </LinearLayout>

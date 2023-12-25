@@ -48,8 +48,13 @@ class Action : AppCompatActivity() {
 
     private var count: Int = 0
 
+    private val s = 1L
+    private val m = 60 * s
+    private val h = 60 * m
+
     private suspend fun timer() {
-        bind.time.text = "${count++}"
+        bind.time.text = String.format("%02d:%02d:%02d", count / h, count % h / m, count % m)
+        count++
         delay(1000L)
         timer()
     }
@@ -57,6 +62,10 @@ class Action : AppCompatActivity() {
     private suspend fun start(beat: Beat, loop: Int) {
         withContext(Dispatchers.IO) {
             repeat(loop) {
+                withContext(Dispatchers.Main) {
+                    val count = it + 1
+                    bind.count.text = "$count"
+                }
                 relax(beat.relax * 1000L)
                 last(beat.last * 1000L)
             }
