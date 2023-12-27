@@ -3,8 +3,14 @@
     <string name="config">Config</string>
     <string name="start">Start</string>
     <string name="relax">Relax(s)</string>
-    <string name="last">Last(s)</string>
+    <string name="hold">Hold(s)</string>
     <string name="click_to_enter">Click to enter</string>
-    <string name="loop">Loop</string>
+    <string name="cycle">Cycle</string>
     <string name="action">Action</string>
+    <string name="input_relaxation_time">Input relaxation time</string>
+    <string name="input_hold_time">Input hold time</string>
+    <string name="clear_relaxation_time">clear relaxation time</string>
+    <string name="clear_hold_time">clear hold time</string>
+    <string name="input_cycle_count">Input cycle count</string>
+    <string name="clear_cycle_count">clear cycle count</string>
 </resources>

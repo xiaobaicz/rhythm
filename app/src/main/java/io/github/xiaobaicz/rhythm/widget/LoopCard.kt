@@ -15,18 +15,18 @@ class LoopCard : EditCard {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
 
     init {
-        bind.clearLoop.setOnClickListener { handleClear(bind.loop) }
-        bind.loop.doAfterTextChanged { handleClearState(bind.clearLoop, it) }
+        bind.clearCycle.setOnClickListener { handleClear(bind.cycle) }
+        bind.cycle.doAfterTextChanged { handleClearState(bind.clearCycle, it) }
     }
 
-    fun setLoop(loop: Int?) {
-        loop?.also {
-            bind.loop.setText("$it")
+    fun setCycle(cycle: Int?) {
+        cycle?.also {
+            bind.cycle.setText("$it")
         }
     }
 
-    fun getLoop(): Int = try {
-        bind.loop.text?.toString()?.toInt() ?: 1
+    fun getCycle(): Int = try {
+        bind.cycle.text?.toString()?.toInt() ?: 1
     } catch (t: Throwable) {
         1
     }

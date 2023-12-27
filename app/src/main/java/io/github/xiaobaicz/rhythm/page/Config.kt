@@ -18,14 +18,14 @@ class Config : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(bind.root)
         bind.beat.setBeat(local.beat)
-        bind.loop.setLoop(local.loop)
+        bind.cycle.setCycle(local.loop)
 
         bind.start.setOnClickListener { start() }
     }
 
     private fun start() {
         local.beat = bind.beat.getBeat()
-        local.loop = max(bind.loop.getLoop(), 1)
+        local.loop = max(bind.cycle.getCycle(), 1)
         toPage<Action>()
     }
 

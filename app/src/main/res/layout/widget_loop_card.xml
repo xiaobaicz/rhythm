@@ -4,26 +4,27 @@
     <androidx.constraintlayout.widget.ConstraintLayout style="@style/item_config">
 
         <cc.xiaobaicz.widgets.text.AppCompatText
-            android:id="@+id/tag_loop"
-            android:text="@string/loop"
+            android:id="@+id/tag_cycle"
+            android:text="@string/cycle"
             style="@style/tag_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lineHeightX="30sp" />
 
         <cc.xiaobaicz.widgets.text.AppCompatEdit
-            android:id="@+id/loop"
+            android:id="@+id/cycle"
             style="@style/input_card"
-            android:hint="@string/click_to_enter"
-            app:layout_constraintStart_toStartOf="@id/tag_loop"
-            app:layout_constraintTop_toBottomOf="@id/tag_loop" />
+            android:hint="@string/input_cycle_count"
+            app:layout_constraintStart_toStartOf="@id/tag_cycle"
+            app:layout_constraintTop_toBottomOf="@id/tag_cycle" />
 
         <ImageView
-            android:id="@+id/clear_loop"
+            android:id="@+id/clear_cycle"
             style="@style/btn_clear"
-            app:layout_constraintBottom_toBottomOf="@id/loop"
-            app:layout_constraintEnd_toEndOf="@id/loop"
-            app:layout_constraintTop_toTopOf="@id/loop" />
+            android:contentDescription="@string/clear_cycle_count"
+            app:layout_constraintBottom_toBottomOf="@id/cycle"
+            app:layout_constraintEnd_toEndOf="@id/cycle"
+            app:layout_constraintTop_toTopOf="@id/cycle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

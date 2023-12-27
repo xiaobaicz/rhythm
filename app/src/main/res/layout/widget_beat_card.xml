@@ -17,39 +17,41 @@
         <cc.xiaobaicz.widgets.text.AppCompatEdit
             android:id="@+id/relax"
             style="@style/input_card"
-            android:hint="@string/click_to_enter"
+            android:hint="@string/input_relaxation_time"
             app:layout_constraintStart_toStartOf="@id/tag_relax"
             app:layout_constraintTop_toBottomOf="@id/tag_relax" />
 
         <ImageView
             android:id="@+id/clear_relax"
             style="@style/btn_clear"
+            android:contentDescription="@string/clear_relaxation_time"
             app:layout_constraintBottom_toBottomOf="@id/relax"
             app:layout_constraintEnd_toEndOf="@id/relax"
             app:layout_constraintTop_toTopOf="@id/relax" />
 
         <cc.xiaobaicz.widgets.text.AppCompatText
-            android:id="@+id/tag_last"
+            android:id="@+id/tag_hold"
             style="@style/tag_card"
             android:layout_marginTop="16dp"
-            android:text="@string/last"
+            android:text="@string/hold"
             app:layout_constraintStart_toStartOf="@id/tag_relax"
             app:layout_constraintTop_toBottomOf="@id/relax"
             app:lineHeightX="30sp" />
 
         <cc.xiaobaicz.widgets.text.AppCompatEdit
-            android:id="@+id/last"
+            android:id="@+id/hold"
             style="@style/input_card"
-            android:hint="@string/click_to_enter"
-            app:layout_constraintStart_toStartOf="@id/tag_last"
-            app:layout_constraintTop_toBottomOf="@id/tag_last" />
+            android:hint="@string/input_hold_time"
+            app:layout_constraintStart_toStartOf="@id/tag_hold"
+            app:layout_constraintTop_toBottomOf="@id/tag_hold" />
 
         <ImageView
-            android:id="@+id/clear_last"
+            android:id="@+id/clear_hold"
             style="@style/btn_clear"
-            app:layout_constraintBottom_toBottomOf="@id/last"
-            app:layout_constraintEnd_toEndOf="@id/last"
-            app:layout_constraintTop_toTopOf="@id/last" />
+            android:contentDescription="@string/clear_hold_time"
+            app:layout_constraintBottom_toBottomOf="@id/hold"
+            app:layout_constraintEnd_toEndOf="@id/hold"
+            app:layout_constraintTop_toTopOf="@id/hold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </merge>

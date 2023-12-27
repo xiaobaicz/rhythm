@@ -67,7 +67,7 @@ class Action : AppCompatActivity() {
                     bind.count.text = "$count"
                 }
                 relax(beat.relax * 1000L)
-                last(beat.last * 1000L)
+                last(beat.hold * 1000L)
             }
         }
         finish()

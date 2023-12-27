@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content" />
 
             <io.github.xiaobaicz.rhythm.widget.LoopCard
-                android:id="@+id/loop"
+                android:id="@+id/cycle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

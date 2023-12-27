@@ -3,8 +3,14 @@
     <string name="config">配置</string>
     <string name="start">开始</string>
     <string name="relax">放松(s)</string>
-    <string name="last">持续(s)</string>
+    <string name="hold">保持(s)</string>
     <string name="click_to_enter">点击输入</string>
-    <string name="loop">循环</string>
+    <string name="cycle">循环</string>
     <string name="action">行动</string>
+    <string name="input_relaxation_time">输入放松时间</string>
+    <string name="input_hold_time">输入保持时间</string>
+    <string name="input_cycle_count">输入循环次数</string>
+    <string name="clear_relaxation_time">清除放松时间</string>
+    <string name="clear_hold_time">清除保持时间</string>
+    <string name="clear_cycle_count">清除循环次数</string>
 </resources>
