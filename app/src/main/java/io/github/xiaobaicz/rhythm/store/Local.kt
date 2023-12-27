@@ -8,5 +8,5 @@ import vip.oicp.xiaobaicz.lib.store.serialize.gson.annotation.GsonSerialize
 @GsonSerialize
 interface Local {
     var beat: Beat?
-    var loop: Int?
+    var cycle: Int?
 }

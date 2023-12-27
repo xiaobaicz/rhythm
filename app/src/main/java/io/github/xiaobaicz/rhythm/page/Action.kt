@@ -23,7 +23,7 @@ class Action : AppCompatActivity() {
 
     private val player by lazy { MediaPlayer.create(this, R.raw.kn_part) }
 
-    private var isLast = false
+    private var isHold = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +31,14 @@ class Action : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         player.setOnCompletionListener {
-            if (isLast)
+            if (isHold)
                 player.start()
         }
 
         lifecycleScope.launch {
-            val loop = local.loop ?: 1
+            val cycle = local.cycle ?: 1
             val beat = local.beat ?: throw NullPointerException()
-            start(beat, loop)
+            start(beat, cycle)
         }
 
         lifecycleScope.launch {
@@ -59,15 +59,15 @@ class Action : AppCompatActivity() {
         timer()
     }
 
-    private suspend fun start(beat: Beat, loop: Int) {
+    private suspend fun start(beat: Beat, cycle: Int) {
         withContext(Dispatchers.IO) {
-            repeat(loop) {
+            repeat(cycle) {
                 withContext(Dispatchers.Main) {
                     val count = it + 1
                     bind.count.text = "$count"
                 }
                 relax(beat.relax * 1000L)
-                last(beat.hold * 1000L)
+                hold(beat.hold * 1000L)
             }
         }
         finish()
@@ -76,14 +76,14 @@ class Action : AppCompatActivity() {
     private suspend fun relax(time: Long) {
         if (player.isPlaying)
             player.pause()
-        isLast = false
+        isHold = false
         delay(time)
     }
 
-    private suspend fun last(time: Long) {
+    private suspend fun hold(time: Long) {
         if (!player.isPlaying)
             player.start()
-        isLast = true
+        isHold = true
         delay(time)
     }
 
