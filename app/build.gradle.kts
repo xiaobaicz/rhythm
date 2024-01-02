@@ -13,8 +13,8 @@ android {
         applicationId = "io.github.xiaobaicz.rhythm"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1007
-        versionName = "1.0.7"
+        versionCode = 1008
+        versionName = "1.0.8"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
