@@ -13,8 +13,8 @@ android {
         applicationId = "io.github.xiaobaicz.rhythm"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1005
-        versionName = "1.0.5"
+        versionCode = 1006
+        versionName = "1.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,7 +67,9 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
+
     implementation(libs.play.services.ads)
+    implementation(libs.integrity)
 
     implementation(libs.mmkv)
 
