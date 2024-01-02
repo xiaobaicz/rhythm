@@ -68,7 +68,6 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
 
-    implementation(libs.play.services.ads)
     implementation(libs.integrity)
 
     implementation(libs.mmkv)

@@ -14,7 +14,6 @@ espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
 auto-service = "1.1.1"
-play-services-ads = "22.6.0"
 store = "1.0.4"
 text = "1.0.9"
 
@@ -33,7 +32,6 @@ material = { group = "com.google.android.material", name = "material", version.r
 auto-service = { module = "com.google.auto.service:auto-service", version.ref = "auto-service" }
 auto-service-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "auto-service" }
 mmkv = { module = "com.tencent:mmkv", version.ref = "mmkv" }
-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "play-services-ads" }
 store = { module = "com.github.xiaobaicz.store:store", version.ref = "store" }
 store-mmkv = { module = "com.github.xiaobaicz.store:store-mmkv", version.ref = "store" }
 store-serialize-gson = { module = "com.github.xiaobaicz.store:store-serialize-gson", version.ref = "store" }
