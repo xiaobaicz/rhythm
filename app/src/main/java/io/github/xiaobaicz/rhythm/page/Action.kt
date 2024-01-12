@@ -8,10 +8,8 @@ import io.github.xiaobaicz.rhythm.R
 import io.github.xiaobaicz.rhythm.databinding.PageActionBinding
 import io.github.xiaobaicz.rhythm.entity.Beat
 import io.github.xiaobaicz.rhythm.store.Local
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import vip.oicp.xiaobaicz.lib.common.app.AppCompatActivity
 import vip.oicp.xiaobaicz.lib.store.store
 
@@ -30,19 +28,20 @@ class Action : AppCompatActivity() {
         setContentView(bind.root)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
+        val cycle = local.cycle ?: 1
+        val beat = local.beat ?: throw NullPointerException()
+
         player.setOnCompletionListener {
             if (isHold)
                 player.start()
         }
 
         lifecycleScope.launch {
-            val cycle = local.cycle ?: 1
-            val beat = local.beat ?: throw NullPointerException()
-            start(beat, cycle)
+            timer(beat)
         }
 
         lifecycleScope.launch {
-            timer()
+            start(beat, cycle)
         }
     }
 
@@ -52,23 +51,24 @@ class Action : AppCompatActivity() {
     private val m = 60 * s
     private val h = 60 * m
 
-    private suspend fun timer() {
+    private suspend fun timer(beat: Beat) {
         bind.time.text = String.format("%02d:%02d:%02d", count / h, count % h / m, count % m)
+        var time = count % (beat.relax + beat.hold)
+        if (isHold) {
+            time -= beat.relax
+        }
+        bind.statusTime.text = String.format("%02d:%02d:%02d", time / h, time % h / m, time % m)
         count++
         delay(1000L)
-        timer()
+        timer(beat)
     }
 
     private suspend fun start(beat: Beat, cycle: Int) {
-        withContext(Dispatchers.IO) {
-            repeat(cycle) {
-                withContext(Dispatchers.Main) {
-                    val count = it + 1
-                    bind.count.text = "$count"
-                }
-                relax(beat.relax * 1000L)
-                hold(beat.hold * 1000L)
-            }
+        repeat(cycle) {
+            val count = it + 1
+            bind.count.text = "$count"
+            relax(beat.relax * 1000L)
+            hold(beat.hold * 1000L)
         }
         finish()
     }
@@ -77,6 +77,7 @@ class Action : AppCompatActivity() {
         if (player.isPlaying)
             player.pause()
         isHold = false
+        bind.status.text = getString(R.string.status_relax)
         delay(time)
     }
 
@@ -84,6 +85,7 @@ class Action : AppCompatActivity() {
         if (!player.isPlaying)
             player.start()
         isHold = true
+        bind.status.text = getString(R.string.status_hold)
         delay(time)
     }
 

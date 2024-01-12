@@ -13,4 +13,6 @@
     <string name="clear_hold_time">clear hold time</string>
     <string name="input_cycle_count">Input cycle count</string>
     <string name="clear_cycle_count">clear cycle count</string>
+    <string name="status_relax">Relax</string>
+    <string name="status_hold">Hold</string>
 </resources>

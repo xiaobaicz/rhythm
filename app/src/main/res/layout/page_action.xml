@@ -31,10 +31,36 @@
             android:textColor="@color/text"
             android:textSize="64sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/time"
+            app:layout_constraintBottom_toTopOf="@id/status"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <cc.xiaobaicz.widgets.text.Text
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/status_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/count" />
+
+        <cc.xiaobaicz.widgets.text.Text
+            android:id="@+id/status_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/status" />
 
         <cc.xiaobaicz.widgets.text.Text
             android:id="@+id/time"
@@ -47,7 +73,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/count" />
+            app:layout_constraintTop_toBottomOf="@id/status_time" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

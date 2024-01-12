@@ -13,4 +13,6 @@
     <string name="clear_relaxation_time">清除放松时间</string>
     <string name="clear_hold_time">清除保持时间</string>
     <string name="clear_cycle_count">清除循环次数</string>
+    <string name="status_relax">放松</string>
+    <string name="status_hold">保持</string>
 </resources>
