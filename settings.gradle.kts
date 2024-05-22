@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "rhythm"
 include(":app")
- 
+include(":design")
