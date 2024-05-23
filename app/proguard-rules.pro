@@ -22,3 +22,11 @@
 
 -keep class io.github.xiaobaicz.rhythm.entity.** { *; }
 -keep class io.github.xiaobaicz.rhythm.store.** { *; }
+
+-keep class ** implements io.github.xiaobaicz.store.Store {
+  <init>();
+}
+
+-keep class ** implements io.github.xiaobaicz.store.Serialize {
+  <init>();
+}

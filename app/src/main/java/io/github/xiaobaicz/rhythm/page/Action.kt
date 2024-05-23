@@ -25,6 +25,7 @@ import io.github.xiaobaicz.rhythm.design.theme.localContentTextStyle
 import io.github.xiaobaicz.rhythm.design.theme.localTextStyleScheme
 import io.github.xiaobaicz.rhythm.design.utils.page
 import io.github.xiaobaicz.rhythm.entity.Beat
+import io.github.xiaobaicz.rhythm.navigation.localNavHostController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import java.util.Locale
@@ -56,6 +57,7 @@ fun Action(beat: Beat = Beat(0, 0), cycle: Int = 0) {
             var count by rememberMutableStateOf { cycle }
             Text(text = "$count", style = localContentTextStyle.copy(fontSize = 48.sp))
             Text(text = timeFormat, style = localContentTextStyle.copy(fontSize = 48.sp))
+            val navHostController = localNavHostController
             LaunchedEffect(key1 = Unit) {
                 while (isActive) {
                     delay(1000)
@@ -70,7 +72,11 @@ fun Action(beat: Beat = Beat(0, 0), cycle: Int = 0) {
                             player.start()
                         }
                     }
+                    if (count <= 0) {
+                        break
+                    }
                 }
+                navHostController.popBackStack()
             }
             DisposableEffect(key1 = Unit) {
                 onDispose { player.release() }
