@@ -13,8 +13,8 @@ android {
         applicationId = "io.github.xiaobaicz.rhythm"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2001
-        versionName = "2.0.1"
+        versionCode = 2002
+        versionName = "2.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -94,6 +94,4 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-
-    implementation(libs.coil.compose)
 }
