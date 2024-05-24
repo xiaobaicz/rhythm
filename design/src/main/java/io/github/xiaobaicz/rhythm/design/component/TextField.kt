@@ -9,6 +9,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -26,6 +27,7 @@ fun TextField(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
+    hint: String = "",
     enabled: Boolean = true,
     readOnly: Boolean = false,
     textStyle: TextStyle = TextStyle(),
@@ -40,8 +42,18 @@ fun TextField(
     cursorBrush: Brush = SolidColor(Color.Black),
     paddingValues: PaddingValues = PaddingValues(vertical = 16.dp),
     decorationBox: @Composable (innerTextField: @Composable () -> Unit) -> Unit = { innerTextField ->
-        Box(modifier = Modifier.padding(paddingValues)) {
+        Box(modifier = Modifier.padding(paddingValues), contentAlignment = Alignment.CenterStart) {
             innerTextField()
+            if (value.isBlank()) {
+                Text(
+                    text = hint,
+                    style = localTextStyleScheme.bodyMedium.copy(
+                        color = localContentColor.copy(
+                            alpha = 0.6f
+                        )
+                    ) + textStyle
+                )
+            }
         }
     }
 ) {
@@ -70,6 +82,7 @@ fun TextField(
     value: TextFieldValue,
     onValueChange: (TextFieldValue) -> Unit,
     modifier: Modifier = Modifier,
+    hint: String = "",
     enabled: Boolean = true,
     readOnly: Boolean = false,
     textStyle: TextStyle = TextStyle(),
@@ -86,6 +99,16 @@ fun TextField(
     decorationBox: @Composable (innerTextField: @Composable () -> Unit) -> Unit = { innerTextField ->
         Box(modifier = Modifier.padding(paddingValues)) {
             innerTextField()
+            if (value.text.isBlank()) {
+                Text(
+                    text = hint,
+                    style = localTextStyleScheme.bodyMedium.copy(
+                        color = localContentColor.copy(
+                            alpha = 0.6f
+                        )
+                    ) + textStyle
+                )
+            }
         }
     }
 ) {

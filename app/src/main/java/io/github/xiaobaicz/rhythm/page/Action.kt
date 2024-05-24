@@ -61,6 +61,7 @@ fun Action(beat: Beat = Beat(0, 0), cycle: Int = 0) {
             LaunchedEffect(key1 = Unit) {
                 while (isActive) {
                     delay(1000)
+                    if (count <= 0) break
                     time++
                     count = cycle - time / (beat.relax + beat.hold)
                     if (time % (beat.relax + beat.hold) < beat.relax) {
@@ -71,9 +72,6 @@ fun Action(beat: Beat = Beat(0, 0), cycle: Int = 0) {
                         if (!player.isPlaying) {
                             player.start()
                         }
-                    }
-                    if (count <= 0) {
-                        break
                     }
                 }
                 navHostController.popBackStack()

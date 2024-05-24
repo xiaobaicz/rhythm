@@ -42,9 +42,9 @@ import io.github.xiaobaicz.rhythm.store.rememberLocal
 @Composable
 fun Home(beat: Beat = Beat(), cycle: Int = 0) {
     Column(modifier = Modifier.page()) {
-        var relax by rememberMutableStateOf { beat.relax }
-        var hold by rememberMutableStateOf { beat.hold }
-        var cycle by rememberMutableStateOf { cycle }
+        var relax by rememberMutableStateOf { if (beat.relax == 0) "" else "${beat.relax}" }
+        var hold by rememberMutableStateOf { if (beat.hold == 0) "" else "${beat.hold}" }
+        var last by rememberMutableStateOf { if (cycle == 0) "" else "$cycle" }
         AppBar {
             Text(
                 text = stringResource(id = R.string.config),
@@ -65,13 +65,14 @@ fun Home(beat: Beat = Beat(), cycle: Int = 0) {
                 )
                 Box(modifier = Modifier) {
                     TextField(
-                        value = "$relax",
-                        onValueChange = { relax = it.safe2Int() },
+                        value = relax,
+                        onValueChange = { relax = it },
+                        hint = stringResource(id = R.string.input_relaxation_time),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         modifier = Modifier.fillMaxWidth()
                     )
                     Button(
-                        onClick = { relax = 0 },
+                        onClick = { relax = "" },
                         modifier = Modifier.align(Alignment.CenterEnd)
                     ) {
                         Icon(
@@ -86,13 +87,14 @@ fun Home(beat: Beat = Beat(), cycle: Int = 0) {
                 )
                 Box {
                     TextField(
-                        value = "$hold",
-                        onValueChange = { hold = it.safe2Int() },
+                        value = hold,
+                        onValueChange = { hold = it },
+                        hint = stringResource(id = R.string.input_hold_time),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         modifier = Modifier.fillMaxWidth()
                     )
                     Button(
-                        onClick = { hold = 0 },
+                        onClick = { hold = "" },
                         modifier = Modifier.align(Alignment.CenterEnd)
                     ) {
                         Icon(
@@ -110,18 +112,19 @@ fun Home(beat: Beat = Beat(), cycle: Int = 0) {
                     .padding(16.dp)
             ) {
                 Text(
-                    text = stringResource(id = R.string.relax),
+                    text = stringResource(id = R.string.cycle),
                     style = localTextStyleScheme.bodyLarge
                 )
                 Box {
                     TextField(
-                        value = "$cycle",
-                        onValueChange = { cycle = it.safe2Int() },
+                        value = last,
+                        onValueChange = { last = it },
+                        hint = stringResource(id = R.string.input_cycle_count),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         modifier = Modifier.fillMaxWidth()
                     )
                     Button(
-                        onClick = { cycle = 0 },
+                        onClick = { last = "" },
                         modifier = Modifier.align(Alignment.CenterEnd)
                     ) {
                         Icon(
@@ -138,8 +141,8 @@ fun Home(beat: Beat = Beat(), cycle: Int = 0) {
         ThemeButton(
             onClick = {
                 try {
-                    local.beat = Beat(relax, hold)
-                    local.cycle = cycle
+                    local.beat = Beat(relax.safe2Int(), hold.safe2Int())
+                    local.cycle = last.safe2Int()
                     navHostController.navigate(Path.action)
                 } catch (t: Throwable) {
                     log(t)
