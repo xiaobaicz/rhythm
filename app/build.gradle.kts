@@ -13,8 +13,8 @@ android {
         applicationId = "io.github.xiaobaicz.rhythm"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2002
-        versionName = "2.0.2"
+        versionCode = 2003
+        versionName = "2.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -82,9 +82,7 @@ dependencies {
 
     implementation(project(":design"))
 
-    implementation(libs.store)
-    implementation(libs.store.mmkv)
-    implementation(libs.store.serialize.gson)
+    implementation(libs.store2.saver.mmap)
 
     implementation(libs.initializer)
 

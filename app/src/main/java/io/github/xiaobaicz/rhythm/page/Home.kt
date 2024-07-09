@@ -37,7 +37,7 @@ import io.github.xiaobaicz.rhythm.design.utils.page
 import io.github.xiaobaicz.rhythm.entity.Beat
 import io.github.xiaobaicz.rhythm.navigation.Path
 import io.github.xiaobaicz.rhythm.navigation.localNavHostController
-import io.github.xiaobaicz.rhythm.store.rememberLocal
+import io.github.xiaobaicz.rhythm.store.local
 
 @Composable
 fun Home(beat: Beat = Beat(), cycle: Int = 0) {
@@ -136,7 +136,6 @@ fun Home(beat: Beat = Beat(), cycle: Int = 0) {
             }
 
         }
-        val local = rememberLocal()
         val navHostController = localNavHostController
         ThemeButton(
             onClick = {
