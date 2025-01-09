@@ -7,14 +7,14 @@ plugins {
 
 android {
     namespace = "io.github.xiaobaicz.rhythm"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "io.github.xiaobaicz.rhythm"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 2004
-        versionName = "2.0.4"
+        targetSdk = 35
+        versionCode = 2005
+        versionName = "2.0.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
